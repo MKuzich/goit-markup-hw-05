@@ -765,4 +765,5 @@ ul {
   border-width: 1px;
   border-color: var(--theme-border);
   background-color: var(--theme-light);
+  cursor: pointer;
 }
