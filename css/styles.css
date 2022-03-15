@@ -13,6 +13,10 @@
   --theme-social: #afb1b8;
   --theme-hero-dark: rgba(47, 48, 58, 0.4);
   --theme-footer-links: rgba(255, 255, 255, 0.1);
+  --theme-employment-dark: rgba(47, 48, 58, 0.8);
+  --theme-portfolio-bckgrnd: rgba(33, 150, 243, 0.9);
+  --theme-bckdrp: rgba(0, 0, 0, 0.2);
+  --theme-border: rgba(0, 0, 0, 0.1);
 }
 
 body {
@@ -60,7 +64,7 @@ ul {
   color: var(--theme-main);
   text-decoration: none;
   padding-top: 24px;
-  padding-bottom: 24px;
+  padding-bottom: 25px;
 }
 
 .logo-first-word {
@@ -92,6 +96,7 @@ ul {
 
 .nav-item {
   margin-right: 50px;
+  position: relative;
 }
 
 .nav-item:last-child {
@@ -151,6 +156,28 @@ ul {
 .contacts-link:hover .contact-icon,
 .contacts-link:focus .contact-icon {
   fill: var(--theme-accent);
+}
+
+.current {
+  color: var(--theme-accent);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.current::after {
+  content: '';
+  display: block;
+  background: var(--theme-accent);
+  border-radius: 2px;
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  top: 45px;
 }
 
 /* hero-section */
@@ -272,6 +299,7 @@ ul {
 
 .employment-item {
   margin-right: 30px;
+  position: relative;
 }
 
 .employment-item:last-child {
@@ -282,6 +310,33 @@ ul {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+.employment-img::after {
+  content: '';
+  display: block;
+  width: 100%;
+}
+
+.employment-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  transform: translate(0, -100%);
+  width: 100%;
+  height: 70px;
+  background-color: var(--theme-employment-dark);
+}
+
+.employment-item-title {
+  font-family: 'Roboto';
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--theme-light);
 }
 
 /* team */
@@ -547,6 +602,33 @@ ul {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
+.examples-box-text {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  background-color: var(--theme-portfolio-bckgrnd);
+  color: var(--theme-light);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 100%;
+  padding: 63px 24px;
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.examples-link:hover .examples-box-text {
+  transform: translate(0, -100%);
+}
+
+.examples-box {
+  position: relative;
+  overflow: hidden;
+}
+
 .examples-section-items:nth-child(3n + 1) {
   margin-left: 0;
 }
@@ -626,20 +708,61 @@ ul {
   display: block;
 }
 
-.current {
-  color: var(--theme-accent);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
-  padding-top: 32px;
-  padding-bottom: 32px;
-}
-
 .current-btn {
   background-color: var(--theme-accent);
   color: var(--theme-light);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
+/*   modal    */
+
+.back-drop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--theme-bckdrp);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.back-drop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.back-drop.is-hidden .modal {
+  transform: scale(0.5);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 528px;
+  height: 581px;
+  border-radius: 4px;
+  background: var(--theme-light);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border-width: 1px;
+  border-color: var(--theme-border);
+  background-color: var(--theme-light);
 }
