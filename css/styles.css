@@ -17,6 +17,8 @@
   --theme-portfolio-bckgrnd: rgba(33, 150, 243, 0.9);
   --theme-bckdrp: rgba(0, 0, 0, 0.2);
   --theme-border: rgba(0, 0, 0, 0.1);
+  --chang-func: cubic-bezier(0.4, 0, 0.2, 1);
+  --chang-time: 2500ms;
 }
 
 body {
@@ -620,7 +622,8 @@ ul {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.examples-link:hover .examples-box-text {
+.examples-link:hover .examples-box-text,
+.examples-link:focus .examples-box-text {
   transform: translate(0, -100%);
 }
 
@@ -721,10 +724,11 @@ ul {
   position: fixed;
   top: 0;
   left: 0;
+  opacity: 1;
   width: 100%;
   height: 100%;
   background-color: var(--theme-bckdrp);
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity var(--chang-time) var(--chang-func);
 }
 
 .back-drop.is-hidden {
@@ -734,7 +738,7 @@ ul {
 }
 
 .back-drop.is-hidden .modal {
-  transform: scale(0.5);
+  transform: scale(0.6) translate(-50%, -50%);
 }
 
 .modal {
@@ -747,8 +751,8 @@ ul {
   background: var(--theme-light);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
-  transform: translate(-50%, -50%) scale(1);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(1) translate(-50%, -50%);
+  transition: transform var(--chang-time) var(--chang-func);
 }
 
 .modal-btn {
