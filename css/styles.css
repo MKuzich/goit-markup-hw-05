@@ -18,7 +18,7 @@
   --theme-bckdrp: rgba(0, 0, 0, 0.2);
   --theme-border: rgba(0, 0, 0, 0.1);
   --chang-func: cubic-bezier(0.4, 0, 0.2, 1);
-  --chang-time: 2500ms;
+  --chang-time: 250ms;
 }
 
 body {
@@ -114,6 +114,7 @@ ul {
   letter-spacing: 0.02em;
   padding-top: 32px;
   padding-bottom: 32px;
+  transition: color var(--chang-time) var(--chang-func);
 }
 
 .nav-link:visited {
@@ -125,7 +126,6 @@ ul {
 .contacts-link:hover,
 .contacts-link:focus {
   color: var(--theme-accent);
-  fill: var(--theme-accent);
 }
 
 .contacts-item:first-child {
@@ -142,6 +142,7 @@ ul {
   line-height: 1.14px;
   letter-spacing: 0.02em;
   color: var(--theme-description);
+  transition: color var(--chang-time) var(--chang-func);
 }
 
 .contacts-link:visited {
@@ -153,6 +154,7 @@ ul {
   height: 16px;
   width: 16px;
   fill: var(--theme-description);
+  transition: fill var(--chang-time) var(--chang-func);
 }
 
 .contacts-link:hover .contact-icon,
@@ -227,6 +229,7 @@ ul {
   cursor: pointer;
   border-radius: 4px;
   border-color: transparent;
+  transition: background-color var(--chang-time) var(--chang-func);
 }
 
 .hero-btn:hover,
@@ -420,6 +423,7 @@ ul {
   border-radius: 50%;
   padding: 12px;
   background-color: var(--theme-light);
+  transition: background-color var(--chang-time) var(--chang-func);
 }
 
 .social-link:hover,
@@ -441,6 +445,7 @@ ul {
   fill: var(--theme-social);
   height: 20px;
   width: 20px;
+  transition: fill var(--chang-time) var(--chang-func);
 }
 
 /* clients-section */
@@ -464,10 +469,12 @@ ul {
   width: 170px;
   border: 1px solid var(--theme-social);
   border-radius: 4px;
+  transition: border-color var(--chang-time) var(--chang-func);
 }
 
 .clients-icon {
   fill: var(--theme-social);
+  transition: fill var(--chang-time) var(--chang-func);
 }
 
 .clients-link:hover,
@@ -525,6 +532,7 @@ ul {
   line-height: 1.14px;
   letter-spacing: 0.02em;
   color: var(--theme-contacts);
+  transition: color var(--chang-time) var(--chang-func);
 }
 
 .contacts-link-footer:hover,
@@ -567,6 +575,7 @@ ul {
   border-radius: 50%;
   padding: 12px;
   background-color: var(--theme-footer-links);
+  transition: background-color var(--chang-time) var(--chang-func);
 }
 
 .footer-social-link:hover,
@@ -596,6 +605,7 @@ ul {
   display: block;
   width: 370px;
   text-decoration: none;
+  transition: box-shadow var(--chang-time) var(--chang-func);
 }
 
 .examples-link:hover,
@@ -617,9 +627,7 @@ ul {
   left: 0;
   height: 100%;
   padding: 63px 24px;
-  transition-property: transform;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--chang-time) var(--chang-func);
 }
 
 .examples-link:hover .examples-box-text,
@@ -669,6 +677,8 @@ ul {
   background-color: var(--theme-bckgrnd-team);
   border-radius: 4px;
   border-color: transparent;
+  transition: background-color var(--chang-time) var(--chang-func),
+    color var(--chang-time) var(--chang-func), box-shadow var(--chang-time) var(--chang-func);
 }
 
 .portfolio-filter-button:hover,
@@ -728,7 +738,9 @@ ul {
   width: 100%;
   height: 100%;
   background-color: var(--theme-bckdrp);
-  transition: opacity var(--chang-time) var(--chang-func);
+  transition: opacity var(--chang-time) var(--chang-func),
+    visibility var(--chang-time) var(--chang-func);
+  visibility: visible;
 }
 
 .back-drop.is-hidden {
@@ -738,7 +750,7 @@ ul {
 }
 
 .back-drop.is-hidden .modal {
-  transform: scale(0.6) translate(-50%, -50%);
+  transform: scale(0.5) translate(-75%, -75%);
 }
 
 .modal {
