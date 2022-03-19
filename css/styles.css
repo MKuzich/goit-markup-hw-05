@@ -106,6 +106,7 @@ ul {
 }
 
 .nav-link {
+  display: block;
   text-decoration: none;
   color: var(--theme-nav);
   font-weight: 500;
@@ -136,6 +137,8 @@ ul {
   display: flex;
   align-items: center;
   text-decoration: none;
+  padding-top: 32px;
+  padding-bottom: 32px;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -163,6 +166,7 @@ ul {
 }
 
 .current {
+  display: block;
   color: var(--theme-accent);
   text-decoration: none;
   font-weight: 500;
@@ -181,7 +185,7 @@ ul {
   height: 4px;
   width: 100%;
   position: absolute;
-  top: 45px;
+  bottom: -1px;
 }
 
 /* hero-section */
@@ -259,7 +263,16 @@ ul {
 .benefits-title,
 .portfolio-filter-title,
 .examples-section-title {
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .benefits-item-title {
@@ -417,11 +430,12 @@ ul {
 }
 
 .social-link {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 44px;
   width: 44px;
   border-radius: 50%;
-  padding: 12px;
   background-color: var(--theme-light);
   transition: background-color var(--chang-time) var(--chang-func);
 }
@@ -569,11 +583,12 @@ ul {
 }
 
 .footer-social-link {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 44px;
   width: 44px;
   border-radius: 50%;
-  padding: 12px;
   background-color: var(--theme-footer-links);
   transition: background-color var(--chang-time) var(--chang-func);
 }
@@ -750,7 +765,7 @@ ul {
 }
 
 .back-drop.is-hidden .modal {
-  transform: scale(0.5) translate(-75%, -75%);
+  transform: translate(-50%, -50%) scale(0.5);
 }
 
 .modal {
@@ -763,7 +778,7 @@ ul {
   background: var(--theme-light);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
-  transform: scale(1) translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   transition: transform var(--chang-time) var(--chang-func);
 }
 
