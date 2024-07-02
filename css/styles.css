@@ -613,9 +613,9 @@ img {
 Коли input у стані checked, для тега span у класі задано стиль fill: у який записана css змінна зі значенням #F4F4FD; для зазначення кольору іконки */
 
 .modal-check-input:checked + .modal-check-label .check-box {
-  background-color: #404bbf;
+  background-color: var(--pressed-color);
   border: none;
-  fill: #f4f4fd;
+  fill: var(--light-color);
 }
 
 .modal-check-link {
