@@ -608,10 +608,14 @@ img {
   pointer-events: none;
 }
 
+/* Коли input у стані checked, для тега span у класі задано стиль background-color: в який записана css змінна зі значенням #404bbf; для зазначення фону
+Коли input у стані checked, для тега span у класі задано стиль border: none; для вимкнення стандартного оформлення кнопки
+Коли input у стані checked, для тега span у класі задано стиль fill: у який записана css змінна зі значенням #F4F4FD; для зазначення кольору іконки */
+
 .modal-check-input:checked + .modal-check-label .check-box {
-  background-color: var(--pressed-color);
+  background-color: #404bbf;
   border: none;
-  fill: var(--light-color);
+  fill: #f4f4fd;
 }
 
 .modal-check-link {
@@ -627,7 +631,7 @@ img {
   background-color: var(--primary-color);
   color: var(--white-color);
   letter-spacing: 0.04em;
-  transition: background-color var(--transition), box-shadow var(--transition);
+  transition: background-color var(--transition);
   border-radius: 4px;
   margin: 0 auto;
 }
@@ -635,5 +639,4 @@ img {
 .modal-submit-btn:hover,
 .modal-submit-btn:focus {
   background-color: var(--pressed-color);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
