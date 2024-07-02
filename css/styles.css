@@ -612,7 +612,13 @@ img {
 Коли input у стані checked, для тега span у класі задано стиль border: none; для вимкнення стандартного оформлення кнопки
 Коли input у стані checked, для тега span у класі задано стиль fill: у який записана css змінна зі значенням #F4F4FD; для зазначення кольору іконки */
 
-.modal-check-input:checked + .modal-check-label .check-box {
+/* .modal-check-input:checked + .modal-check-label .check-box {
+  background-color: var(--pressed-color);
+  border: none;
+  fill: var(--light-color);
+} */
+
+.modal-check-input[value='true'] + .modal-check-label .check-box {
   background-color: var(--pressed-color);
   border: none;
   fill: var(--light-color);
