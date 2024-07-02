@@ -589,6 +589,8 @@ img {
   justify-content: center;
   align-items: center;
   fill: transparent;
+  margin-right: 8px;
+  pointer-events: none;
 }
 
 .modal-check-input:checked .check-box {
@@ -599,4 +601,16 @@ img {
 
 .modal-check-link {
   color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.modal-submit-btn {
+  display: block;
+  min-width: 169px;
+  height: 56px;
+  font-weight: 500;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  letter-spacing: 0.04em;
+  transition: background-color var(--transition);
 }
