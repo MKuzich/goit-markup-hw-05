@@ -608,7 +608,7 @@ img {
   pointer-events: none;
 }
 
-.modal-check-input[value='true']:checked + .modal-check-label > .check-box {
+.modal-check-input:checked + .modal-check-label > .check-box {
   background-color: var(--pressed-color);
   border: none;
   fill: var(--light-color);
