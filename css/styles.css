@@ -605,7 +605,6 @@ img {
   align-items: center;
   fill: transparent;
   margin-right: 8px;
-  pointer-events: none;
 }
 
 .modal-check-input:checked + .modal-check-label > .check-box {
